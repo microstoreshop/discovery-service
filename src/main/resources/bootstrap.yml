@@ -1,0 +1,15 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery-service
+  profiles:
+    active: cloud
+---
+spring:
+  profiles: cloud
+  cloud:
+    config:
+      uri: http://config-service.default.svc.cluster.local:8888
+
+
